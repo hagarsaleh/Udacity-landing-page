@@ -23,7 +23,7 @@ body {
 /* Typeography General*/
 h1 {
     font-family: 'Fira Sans', sans-serif;
-    font-size: 3em;
+    font-size: 2.5em;
     margin: 2em 1rem;
 }
 
@@ -65,19 +65,28 @@ section {
 /* ---- Module Rules ---- */
 
 /* Navigation Styles*/
+.navbar__menu{
+  background: lightyellow;
+
+}
 .navbar__menu ul {
     padding-left: 0;
     margin: 0;
     text-align: right;
-    background-color: rgba(255, 255, 255, 0.187);
+
 }
 
 .navbar__menu li {
     display: inline-block;
     color: black;
-    font-size: 2em;
+    font-size: 1em;
     font-family: 'Fira Sans', sans-serif;
     padding-left: 3%;
+}
+a:after, a:before, a{
+  text-decoration: none;
+  color: balck;
+
 }
 
 .navbar__menu .menu__link {
@@ -200,9 +209,9 @@ section:nth-of-type(3n + 1) .landing__container::after {
 /* Section Active Styles */
 /* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
 section.your-active-class {
-    background-color: red;
-    /*background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);*/
-}
+
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+    }
 
 section.your-active-class .landing__container::before {
     opacity: 1;
@@ -211,7 +220,8 @@ section.your-active-class .landing__container::before {
 
 section.your-active-class .landing__container::after {
     opacity: 1;
-    animation: rotate 5s linear 0s infinite forwards reverse;
+  /*  transition: ease 0.3s all;*/
+    animation: rotate 50s linear 10s infinite forwards reverse;
 }
 
 /* Section Active Styles Keyframe Animations */
