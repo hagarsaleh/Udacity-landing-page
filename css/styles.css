@@ -83,11 +83,7 @@ section {
     font-family: 'Fira Sans', sans-serif;
     padding-left: 3%;
 }
-a:after, a:before, a{
-  text-decoration: none;
-  color: balck;
 
-}
 
 .navbar__menu .menu__link {
     display: block;
@@ -101,6 +97,15 @@ a:after, a:before, a{
     background: #333;
     color: #fff;
     transition: ease 0.3s all;
+}
+
+.active{
+  display: block;
+  padding: 1em;
+  font-weight: bold;
+  text-decoration: none;
+  background: #333;
+  color: #fff;
 }
 
 /* Header Styles */
