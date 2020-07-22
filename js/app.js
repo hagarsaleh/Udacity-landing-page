@@ -4,7 +4,7 @@ var nav= document.getElementById("navbar__list");
 var i =0;
 var list = document.getElementsByTagName('section');
 const fragment = document.createDocumentFragment();
-function add(){
+function addLi(){
   do  {
     var li= document.createElement('li');
     var a=  document.createElement('a');
@@ -21,7 +21,7 @@ function add(){
   }while (i<list.length);
 
 }
-add();
+addLi();
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -32,11 +32,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
-
-
-// var nav= document.getElementById()
-// check if scrolling
-
+// check if not scrolling and hide the navigation bar
 var timer = null;
 window.addEventListener('scroll', function() {
     if(timer !== null) {
@@ -47,14 +43,14 @@ window.addEventListener('scroll', function() {
     {nav.style.display='block'}, 700);
 }, false);
 
+// initialize observer
 let options = {
 //  root: divs,
   rootMargin: '0px',
   threshold: .7
 }
-
+//loop on sections in page and give active class to the one in viewport
 let n = 0;
-
 for(item of list){
 let item= document.getElementsByTagName("section")[n];
 let callback = (entries, observer) => {
@@ -67,15 +63,10 @@ if (document.querySelector('.your-active-class') !== null) {
 item.setAttribute('class', 'your-active-class');
 }
     myFunction(item);
-    //console.log(item.id);
-
-  });
+    });
 
 };
 let observer = new IntersectionObserver(callback, options);
   observer.observe(item);
   n++;
 }
-
-
-console.log(performance.now());
